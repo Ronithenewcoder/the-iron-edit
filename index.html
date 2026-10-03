@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The Iron Edit — an immersive patient education experience about anemia." />
+  <title>The Iron Edit | Anemia, Explained</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="progress" id="progress"></div>
+
+  <nav class="nav glass">
+    <a class="logo" href="#top"><span class="logo-dot"></span>THE IRON EDIT</a>
+    <div class="navlinks">
+      <a href="#story">The Story</a><a href="#types">Types</a><a href="#labs">Labs</a>
+      <a href="#nutrition">Nutrition</a><a href="#kids">Kids</a><a href="#watch">Watch</a>
+    </div>
+    <button class="sound-pill" id="themeBtn" aria-label="Toggle mood">✦ Mood</button>
+  </nav>
+
+  <header id="top" class="hero">
+    <div class="hero-noise"></div>
+    <div class="orb orb-a"></div><div class="orb orb-b"></div>
+    <div class="hero-copy reveal">
+      <p class="kicker">A DIGITAL BLOOD-HEALTH EXPERIENCE</p>
+      <h1>ANEMIA,<br><em>RE-EDITED.</em></h1>
+      <p class="lede">Not “just low iron.” Explore what red blood cells do, why anemia happens, how labs reveal the pattern, and how nutrition and treatment fit together.</p>
+      <div class="hero-actions">
+        <a class="cta gold" href="#story">Enter the bloodstream <span>↓</span></a>
+        <a class="cta clear" href="#labs">Decode my labs</a>
+      </div>
+    </div>
+    <div class="blood-stage" aria-hidden="true">
+      <div class="rbc r1"><i></i></div><div class="rbc r2"><i></i></div><div class="rbc r3"><i></i></div>
+      <div class="rbc r4"><i></i></div><div class="spark s1"></div><div class="spark s2"></div>
+      <div class="stage-label glass"><span>O₂</span><b>Oxygen delivery</b><small>Powered by healthy red blood cells</small></div>
+    </div>
+    <div class="scroll-cue">SCROLL TO EXPLORE <span>↓</span></div>
+  </header>
+
+  <main>
+    <section id="story" class="story section">
+      <div class="section-head reveal">
+        <p class="kicker wine">START HERE</p><h2>Your blood has a delivery system.</h2>
+        <p>Red blood cells carry oxygen throughout the body using hemoglobin. Anemia occurs when you do not have enough healthy red blood cells or hemoglobin to meet the body's needs.</p>
+      </div>
+      <div class="story-track">
+        <article class="story-card reveal"><span>01</span><div class="mini-cell"></div><h3>Red blood cells</h3><p>Think of them as tiny delivery vehicles moving through your bloodstream.</p></article>
+        <article class="story-card reveal"><span>02</span><div class="molecule">Fe</div><h3>Iron + hemoglobin</h3><p>Iron is needed to make hemoglobin, the protein that helps red blood cells carry oxygen.</p></article>
+        <article class="story-card reveal"><span>03</span><div class="battery"><i></i></div><h3>When delivery drops</h3><p>Fatigue, weakness, dizziness, headache, shortness of breath, pale skin, and a fast or irregular heartbeat can occur.</p></article>
+      </div>
+      <div class="alert-strip reveal"><b>Urgent red flags:</b> chest pain, fainting, severe trouble breathing, or significant bleeding deserve urgent medical evaluation.</div>
+    </section>
+
+    <section id="types" class="types section dark-section">
+      <div class="section-head reveal">
+        <p class="kicker gold-text">THE PLOT TWIST</p><h2>Anemia is a category,<br>not one diagnosis.</h2>
+        <p>MCV measures average red-cell size. It helps classify the pattern, while history and additional testing help identify the cause.</p>
+      </div>
+      <div class="mcv-lab reveal">
+        <button class="mcv-card active" data-type="micro"><div class="cell-viz micro"></div><span>LOW MCV</span><h3>Microcytic</h3><small>Smaller RBCs</small></button>
+        <button class="mcv-card" data-type="normo"><div class="cell-viz normo"></div><span>NORMAL MCV</span><h3>Normocytic</h3><small>Average-size RBCs</small></button>
+        <button class="mcv-card" data-type="macro"><div class="cell-viz macro"></div><span>HIGH MCV</span><h3>Macrocytic</h3><small>Larger RBCs</small></button>
+      </div>
+      <div class="type-detail glass reveal" id="typeDetail"></div>
+      <div class="correction reveal"><span>✦</span><p><b>Quick correction:</b> microcytic cells are not simply “too small to carry iron.” Iron deficiency can reduce normal hemoglobin production and often produces smaller red cells.</p></div>
+
+      <div class="diagnosis-grid reveal">
+        <div><b>IRON DEFICIENCY</b><p>Too little available iron for normal hemoglobin production.</p></div>
+        <div><b>B12 / PERNICIOUS</b><p>B12 deficiency can cause anemia; pernicious anemia involves impaired B12 absorption.</p></div>
+        <div><b>HEMOLYTIC</b><p>Red cells are destroyed faster than the body replaces them.</p></div>
+        <div><b>APLASTIC</b><p>Bone marrow does not produce enough new blood cells.</p></div>
+        <div><b>INHERITED</b><p>Includes conditions such as sickle cell disease and thalassemia.</p></div>
+        <div><b>CHRONIC / KIDNEY</b><p>Chronic disease, inflammation, and kidney problems can contribute to anemia.</p></div>
+      </div>
+    </section>
+
+    <section class="risk section">
+      <div class="split">
+        <div class="sticky-copy reveal"><p class="kicker wine">WHO'S AT RISK?</p><h2>Some bodies need a closer look.</h2><p>Risk does not equal diagnosis. It tells the healthcare team where to look more carefully.</p></div>
+        <div class="risk-stack">
+          <div class="risk-card reveal"><span>01</span><h3>Blood loss</h3><p>Heavy menstrual bleeding, gastrointestinal bleeding, surgery, injury, or frequent blood donation can reduce iron and red blood cells.</p></div>
+          <div class="risk-card reveal"><span>02</span><h3>Higher needs</h3><p>Pregnancy and periods can increase iron needs or losses.</p></div>
+          <div class="risk-card reveal"><span>03</span><h3>Nutrition + absorption</h3><p>Low intake of iron, vitamin B12, or folate—or problems absorbing nutrients—can contribute.</p></div>
+          <div class="risk-card reveal"><span>04</span><h3>Health + family history</h3><p>Older age, kidney disease, chronic inflammation, infection, cancer, autoimmune disease, inherited conditions, and some medicines or treatments can matter.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="labs" class="labs section">
+      <div class="section-head reveal"><p class="kicker wine">THE LAB EDIT</p><h2>Your CBC is telling a story.</h2><p>Tap a lab to see what role it plays. A single number rarely tells the whole story.</p></div>
+      <div class="lab-console reveal">
+        <div class="lab-menu">
+          <button class="lab-btn active" data-lab="hgb"><span>HGB</span>Hemoglobin</button>
+          <button class="lab-btn" data-lab="hct"><span>HCT</span>Hematocrit</button>
+          <button class="lab-btn" data-lab="mcv"><span>MCV</span>Cell size</button>
+          <button class="lab-btn" data-lab="rdw"><span>RDW</span>Size variation</button>
+          <button class="lab-btn" data-lab="ferritin"><span>FER</span>Ferritin</button>
+          <button class="lab-btn" data-lab="iron"><span>Fe</span>Iron studies</button>
+        </div>
+        <div class="lab-screen">
+          <div class="screen-top"><span>THE IRON EDIT // LAB EXPLORER</span><i></i><i></i><i></i></div>
+          <div id="labContent"></div>
+        </div>
+      </div>
+      <div class="more-tests reveal"><b>Other tests may include:</b> reticulocyte count • vitamin B12/folate • kidney testing • stool testing • endoscopy/colonoscopy for suspected GI bleeding • genetic/hemoglobin testing • selected bone-marrow testing.</div>
+      <div class="specialist reveal"><span class="cross">+</span><div><p class="kicker wine">WHEN SPECIALTY CARE ENTERS</p><h3>Meet hematology.</h3><p>NHLBI notes that a patient with anemia may be referred to a hematologist—a physician who specializes in blood diseases—when specialist evaluation or management is needed.</p></div></div>
+    </section>
+
+    <section id="nutrition" class="nutrition section">
+      <div class="section-head reveal"><p class="kicker wine">THE NOURISH EDIT</p><h2>Build the plate.<br>Pair with purpose.</h2></div>
+      <div class="plate-zone reveal">
+        <div class="plate">
+          <div class="plate-center"><b>IRON</b><small>rich foods</small></div>
+          <span class="food f1">Lentils</span><span class="food f2">Seafood</span><span class="food f3">Spinach</span>
+          <span class="food f4">Poultry</span><span class="food f5">Beans</span><span class="food f6">Fortified cereal</span>
+        </div>
+        <div class="pairing">
+          <p class="kicker wine">THE POWER PAIR</p><h3>Plant iron + Vitamin C</h3>
+          <div class="pair-row"><span>Beans</span><b>+</b><span>Sweet peppers</span></div>
+          <div class="pair-row"><span>Lentils</span><b>+</b><span>Tomatoes</span></div>
+          <div class="pair-row"><span>Fortified cereal</span><b>+</b><span>Strawberries</span></div>
+          <p>Vitamin C helps the body absorb nonheme iron from plant foods.</p>
+        </div>
+      </div>
+      <div class="nutrient-grid reveal">
+        <article><span>Fe</span><h3>Iron</h3><p>Meat, seafood, poultry, beans, lentils, spinach, nuts, raisins, and fortified grains.</p></article>
+        <article><span>B12</span><h3>Vitamin B12</h3><p>Fish, meat, poultry, eggs, milk/dairy, and fortified foods.</p></article>
+        <article><span>B9</span><h3>Folate</h3><p>Dark-green vegetables, beans, peas, citrus, nuts, and fortified grains.</p></article>
+      </div>
+    </section>
+
+    <section class="treatment section dark-section">
+      <div class="section-head reveal"><p class="kicker gold-text">TREAT THE CAUSE</p><h2>Same symptom.<br>Different treatment.</h2></div>
+      <div class="treatment-road reveal">
+        <div><span>IRON DEFICIENCY</span><b>→</b><p>Oral iron is common; IV iron may be used in selected patients.</p></div>
+        <div><span>B12 DEFICIENCY</span><b>→</b><p>Vitamin B12 replacement; some patients may need injections.</p></div>
+        <div><span>FOLATE DEFICIENCY</span><b>→</b><p>Folate replacement after appropriate evaluation.</p></div>
+        <div><span>OTHER ANEMIAS</span><b>→</b><p>Cause-specific therapy, sometimes with specialist care.</p></div>
+      </div>
+      <div class="versus reveal"><article><p class="kicker gold-text">NOT THE SAME THING</p><h3>IV Iron</h3><p>Iron is delivered directly through a vein.</p></article><strong>VS</strong><article><p class="kicker gold-text">NOT THE SAME THING</p><h3>Blood Transfusion</h3><p>Donor blood is delivered through an IV line. It may be used in some severe anemias depending on the clinical situation.</p></article></div>
+      <div class="correction reveal"><span>!</span><p><b>Don't self-prescribe iron:</b> not every anemia is iron deficiency, and excess iron can be harmful.</p></div>
+    </section>
+
+    <section id="kids" class="kids section">
+      <div class="kids-banner reveal"><div><p class="kicker">PARENTS — HAND THEM THE SCREEN 📱</p><h2>Okay, kids.<br>Your turn.</h2><p>This part explains blood without the grown-up medical words.</p></div><div class="kid-cell"><div class="face">•ᴗ•</div></div></div>
+      <div class="kid-grid reveal">
+        <article><div class="kid-icon">🚚</div><h3>Red blood cells are delivery trucks.</h3><p>They zoom around your body delivering oxygen to your brain, muscles, and organs.</p></article>
+        <article><div class="kid-icon">🧲</div><h3>Iron helps make hemoglobin.</h3><p>Hemoglobin is the helper inside red blood cells that carries oxygen.</p></article>
+        <article><div class="kid-icon">🔋</div><h3>Low iron can feel like low battery.</h3><p>Iron-deficiency anemia can make kids feel tired or weak and may affect attention and learning.</p></article>
+      </div>
+      <div class="kid-game reveal">
+        <div><p class="kicker">BUILD A BLOOD-HEALTHY COMBO</p><h3>Tap a food. Find its Vitamin C buddy.</h3><div class="food-buttons">
+          <button data-food="beans">🫘 Beans</button><button data-food="cereal">🥣 Cereal</button><button data-food="spinach">🥬 Spinach</button>
+        </div></div>
+        <div class="buddy" id="buddy"><span>✨</span><h3>Choose an iron food!</h3><p>Your vitamin C buddy will appear here.</p></div>
+      </div>
+      <div class="kid-safety reveal"><b>Parents:</b> do not give a child an iron supplement unless their healthcare professional recommends it. Too much iron can be toxic. Keep iron-containing products out of children's reach.</div>
+    </section>
+
+    <section id="watch" class="watch section">
+      <div class="section-head reveal"><p class="kicker wine">WATCH + LEARN</p><h2>From trusted health educators.</h2></div>
+      <div class="video-layout reveal">
+        <div class="video-shell"><iframe src="https://www.youtube.com/embed/obgXcNaDLJU" title="NHLBI iron-deficiency anemia patient story" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><div><b>NHLBI patient story</b><span>Iron-deficiency anemia, symptoms, treatment & lifestyle</span></div></div>
+        <div class="resource-stack">
+          <a href="https://www.nhlbi.nih.gov/health/anemia" target="_blank" rel="noopener"><span>NIH / NHLBI</span><b>Anemia overview →</b></a>
+          <a href="https://medlineplus.gov/lab-tests/mcv-mean-corpuscular-volume/" target="_blank" rel="noopener"><span>MEDLINEPLUS</span><b>Understand MCV →</b></a>
+          <a href="https://ods.od.nih.gov/factsheets/iron-Consumer/" target="_blank" rel="noopener"><span>NIH ODS</span><b>Iron fact sheet →</b></a>
+          <a href="https://www.nhlbi.nih.gov/resources/your-guide-anemia" target="_blank" rel="noopener"><span>NHLBI</span><b>Full anemia guide →</b></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="quiz-section section dark-section">
+      <div class="section-head reveal"><p class="kicker gold-text">THE FINAL CHECK</p><h2>Do you know your blood?</h2></div>
+      <div class="quiz-card reveal" id="quizCard">
+        <div class="quiz-top"><span id="qCount">QUESTION 1 / 4</span><span id="score">SCORE 0</span></div>
+        <h3 id="question"></h3><div id="answers" class="answers"></div><p id="feedback" class="quiz-feedback"></p>
+        <button id="nextQ" class="cta gold hidden">Next question →</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><a class="logo" href="#top"><span class="logo-dot"></span>THE IRON EDIT</a><p>Patient education, but make it understandable.</p></div>
+    <div><b>Government education sources</b><p>NIH / NHLBI · National Library of Medicine / MedlinePlus · NIH Office of Dietary Supplements</p></div>
+    <p class="fine">Educational content only. This website does not diagnose anemia or replace individualized medical advice.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
